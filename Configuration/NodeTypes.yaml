@@ -1,0 +1,60 @@
+'TYPO3.Neos:Content':
+  ui:
+    inspector:
+      groups:
+        bootstrapOptions:
+          label: 'Bootstrap Options'
+  properties:
+    layoutBootstrap:
+      type: string
+      defaultValue: '0'
+      ui:
+        label: 'Bootstrap Layout'
+        inspector:
+          group: bootstrapOptions
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              'alert alert-success':
+                label: 'Alert Success'
+              'alert alert-info':
+                label: 'Alert Info'
+              'alert alert-warning':
+                label: 'Alert Warning'
+              'alert alert-danger':
+                label: 'Alert Danger'
+    visibilityBootstrap:
+      type: string
+      defaultValue: '0'
+      ui:
+        label: 'Bootstrap Visibility'
+        inspector:
+          group: bootstrapOptions
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              'hidden-xs':
+                label: 'Hidden Phone'
+              'hidden-sm':
+                label: 'Hidden Tablet'
+              'hidden-md':
+                label: 'Hidden Screen'
+              'hidden-lg':
+                label: 'Hidden Large Screen'
+'TYPO3.Neos.NodeTypes:Headline':
+  properties:
+    title:
+      ui:
+        aloha:
+          format: ['sub', 'sup', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6','removeFormat']
+'TYPO3.Neos.NodeTypes:Text':
+  properties:
+    text:
+      defaultValue: '<p>Enter text here</p>'
+      ui:
+        aloha:
+          format: ['b', 'i', 'u', 'sub', 'sup', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'removeFormat']

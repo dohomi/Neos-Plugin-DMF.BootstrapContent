@@ -1,0 +1,5 @@
+prototype(TYPO3.Neos:Content) {
+    attributes.class = 'bt3-element'
+    # attributes.class.@process.nodeType >
+    attributes.class.@process.bt3Class = ${String.trim(value + ' ' + q(node).property('layoutBootstrap') + ' ' + q(node).property('visibilityBootstrap'))}
+}
