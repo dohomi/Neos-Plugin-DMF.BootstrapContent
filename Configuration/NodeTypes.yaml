@@ -7,7 +7,7 @@
   properties:
     layoutBootstrap:
       type: string
-      defaultValue: '0'
+      defaultValue: ''
       ui:
         label: 'Bootstrap Layout'
         inspector:
@@ -27,7 +27,7 @@
                 label: 'Alert Danger'
     visibilityBootstrap:
       type: string
-      defaultValue: '0'
+      defaultValue: ''
       ui:
         label: 'Bootstrap Visibility'
         inspector:
@@ -58,3 +58,57 @@
       ui:
         aloha:
           format: ['b', 'i', 'u', 'sub', 'sup', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'removeFormat']
+'TYPO3.Neos.NodeTypes:TwoColumn':
+  properties:
+    layout:
+      defaultValue: '6-6'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '50-50': ~
+              '75-25': ~
+              '25-75': ~
+              '66-33': ~
+              '33-66': ~
+              '6-6':
+                label: '50% / 50%'
+              '8-4':
+                label: '66% / 33%'
+              '4-8':
+                label: '33% / 66%'
+              '9-3':
+                label: '75% / 25%'
+              '3-9':
+                label: '25% / 75%'
+'TYPO3.Neos.NodeTypes:ThreeColumn':
+  properties:
+    layout:
+      defaultValue: '4-4-4'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '33-33-33': ~
+              '50-25-25': ~
+              '25-50-25': ~
+              '25-25-50': ~
+              '4-4-4':
+                label: '33% / 33% / 33%'
+              '6-3-3':
+                label: '50% / 25% / 33%'
+              '3-6-3':
+                label: '25% / 50% / 25%'
+              '3-3-6':
+                label: '25% / 25% / 50%'
+'TYPO3.Neos.NodeTypes:FourColumn':
+  properties:
+    layout:
+      defaultValue: '3-3-3-3'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '25-25-25-25': ~
+              '3-3-3-3':
+                label: '25% / 25% / 25% / 25%'

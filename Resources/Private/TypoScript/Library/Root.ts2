@@ -1,5 +1,19 @@
 prototype(TYPO3.Neos:Content) {
     attributes.class = 'bt3-element'
+    # TODO: Need to decide if switching the nodeType name off
     # attributes.class.@process.nodeType >
     attributes.class.@process.bt3Class = ${String.trim(value + ' ' + q(node).property('layoutBootstrap') + ' ' + q(node).property('visibilityBootstrap'))}
+}
+
+
+# Modify Neos MultiColumn to use bootstrap classes
+prototype(TYPO3.Neos.NodeTypes:MultiColumn) {
+	attributes.class = ${'row'}
+	columns.iterationName = 'multiColumnIteration'
+}
+
+# Modify Neos MultiColumnItem to use bootstrap classes
+prototype(TYPO3.Neos.NodeTypes:MultiColumnItem) {
+	# TODO: Replace parents().first() by parent()
+	attributes.class = ${'col-sm-' + String.split(q(node).parents().first().property('layout'), '-')[multiColumnIteration.index]}
 }
