@@ -1,0 +1,28 @@
+# Carousel element
+prototype(DMF.BootstrapContent:Carousel) {
+	carouselItems = TYPO3.Neos:ContentCollection {
+		nodePath = 'carouselItems'
+		iterationName = 'carouselItemsIteration'
+		attributes.class = 'carousel-inner'
+	}
+
+	carouselItemArray = ${q(node).children('carouselItems').children()}
+
+	# Enhance content prototype for the carousel
+    prototype(TYPO3.Neos:Content) {
+        attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+        iteration = ${carouselItemsIteration}
+
+	}
+
+	# Enhance image prototype for the carousel
+	prototype(TYPO3.Neos.NodeTypes:Image) {
+		# Render images in the carousel with a special template.
+		templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/CarouselItem.html'
+
+		# attributes.class = ${'item' + (carouselItemsIteration.isFirst ? ' active' : '')}
+
+		# We want to use the item iterator in the template so we have to store it in ts.
+		iteration = ${carouselItemsIteration}
+	}
+}

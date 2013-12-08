@@ -112,3 +112,13 @@
               '25-25-25-25': ~
               '3-3-3-3':
                 label: '25% / 25% / 25% / 25%'
+'DMF.BootstrapContent:Carousel':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    carouselItems:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Bootstrap Carousel'
+    group: 'plugins'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
