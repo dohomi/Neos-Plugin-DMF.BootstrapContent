@@ -4,14 +4,16 @@
         <ol class="breadcrumb">
             <f:for each="{items}" as="item" reverse="TRUE" iteration="itemIterator">
                 <f:if condition="{item.hiddenInIndex} == 0">
-                    <li class="{item.state}">
-                        <f:if condition="{itemIterator.isLast} != 1">
-                            <f:then>
+                    <f:if condition="{itemIterator.isLast} != 1">
+                        <f:then>
+                            <li>
                                 <neos:link.node node="{item}">{item.label}</neos:link.node>
-                            </f:then>
-                            <f:else>{item.label}</f:else>
-                        </f:if>
-                    </li>
+                            </li>
+                        </f:then>
+                        <f:else>
+                            <li class="active">{item.label}</li>
+                        </f:else>
+                    </f:if>
                 </f:if>
             </f:for>
         </ol>

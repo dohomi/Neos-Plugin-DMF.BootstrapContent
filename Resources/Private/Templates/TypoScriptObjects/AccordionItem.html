@@ -1,0 +1,21 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+
+{f:if(condition:'{iteration.isFirst}', then:' <div class="panel-group" id="{parentIdentifier}">')}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#{parentIdentifier}" href="#{node.identifier}" data-target="#{node.identifier}">
+                {node.properties.title}
+            </a>
+        </h4>
+    </div>
+    <div class="panel-collapse collapse" id="{node.identifier}">
+        <div class="panel-body">
+            <ts:render path="content" />
+        </div>
+    </div>
+</div>
+
+{f:if(condition:'{iteration.isLast}', then:' </div>')}

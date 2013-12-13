@@ -1,0 +1,10 @@
+prototype(DMF.BootstrapContent:UiCollectionItem) {
+    // We want to use the item iterator in the template so we have to store it in ts.
+    iteration = ${itemIteration}
+
+    parentIdentifier = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('_identifier')}
+
+    content = TYPO3.Neos:ContentCollection {
+        nodePath = 'content'
+    }
+}

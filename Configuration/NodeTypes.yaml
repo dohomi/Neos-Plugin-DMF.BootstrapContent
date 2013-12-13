@@ -50,14 +50,22 @@
     title:
       ui:
         aloha:
-          format: ['sub', 'sup', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6','removeFormat']
+          'format':
+            'p': FALSE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
 'TYPO3.Neos.NodeTypes:Text':
   properties:
     text:
       defaultValue: '<p>Enter text here</p>'
       ui:
         aloha:
-          format: ['b', 'i', 'u', 'sub', 'sup', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'pre', 'removeFormat']
+          'format':
+            'p': FALSE
+            'h4': TRUE
+            'h5': TRUE
+            'h6': TRUE
 'TYPO3.Neos.NodeTypes:TwoColumn':
   properties:
     layout:
@@ -112,13 +120,116 @@
               '25-25-25-25': ~
               '3-3-3-3':
                 label: '25% / 25% / 25% / 25%'
+
 'DMF.BootstrapContent:Carousel':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
     carouselItems:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
-    label: 'Bootstrap Carousel'
+    label: 'Bootstrap Image Carousel'
     group: 'plugins'
     icon: 'icon-picture'
     inlineEditable: TRUE
+    inspector:
+      groups:
+        carouselConfiguration:
+          label: 'Carousel cofiguration'
+  properties:
+    interval:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Auto slide'
+        inspector:
+          group: carouselConfiguration
+
+'DMF.BootstrapContent:Tab':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    group: 'plugins'
+    label: 'Bootstrab Tab'
+    icon: 'icon-puzzle-piece'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        tabConfiguration:
+          label: 'Tab Configuration'
+  childNodes:
+    items:
+      type: 'TYPO3.Neos:ContentCollection'
+  properties:
+    pillStyle:
+      type: boolean
+      defaultValue: FALSE
+      ui:
+        label: 'Pill style'
+        inspector:
+          group: tabConfiguration
+
+'DMF.BootstrapContent:Accordion':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    group: 'plugins'
+    label: 'Bootstrab Accordion'
+    icon: 'icon-puzzle-piece'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        accordionConfiguration:
+          label: 'Tab Configuration'
+  childNodes:
+    items:
+      type: 'TYPO3.Neos:ContentCollection'
+
+
+'DMF.BootstrapContent:UiCollectionItem':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Ui Collection Item'
+    icon: 'icon-plus-sign'
+    inlineEditable: TRUE
+    group: 'structure'
+    inspector:
+      groups:
+        uiOptions:
+          label: 'Multicontent Options'
+          priority: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        label: 'Title'
+        inlineEditable: TRUE
+        inspector:
+          group: uiOptions
+
+'DMF.BootstrapContent:AccordionItem':
+  superTypes: ['TYPO3.Neos:Content']
+  childNodes:
+    content:
+      type: 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Accordion Collection Item'
+    icon: 'icon-plus-sign'
+    inlineEditable: TRUE
+    group: 'structure'
+    inspector:
+      groups:
+        uiOptions:
+          label: 'Multicontent Options'
+          priority: 1
+  properties:
+    title:
+      type: string
+      defaultValue: 'Enter title here'
+      ui:
+        label: 'Title'
+        inlineEditable: TRUE
+        reloadIfChanged: TRUE
+        inspector:
+          group: uiOptions
