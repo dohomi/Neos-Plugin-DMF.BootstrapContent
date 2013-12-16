@@ -1,14 +1,13 @@
 prototype(DMF.BootstrapContent:Accordion) {
 
     accordionItems = TYPO3.Neos:ContentCollection {
-        nodePath = 'items'
+        nodePath = 'accordion'
         iterationName = 'itemIteration'
     }
-    //pillStyle = ${q(node).property('pillStyle')}
-
-    //accordionItemArray = ${q(node).children('items').children('[instanceof DMF.BootstrapContent:UiCollectionItem]')}
 
     prototype(DMF.BootstrapContent:UiCollectionItem) {
+        parentIdentifier = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('_identifier')}
+        bootstrapStyle = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('bootstrapStyle')}
         templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/AccordionItem.html'
     }
 }

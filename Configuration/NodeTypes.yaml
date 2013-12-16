@@ -156,7 +156,7 @@
         tabConfiguration:
           label: 'Tab Configuration'
   childNodes:
-    items:
+    tab:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
     pillStyle:
@@ -177,11 +177,31 @@
     inspector:
       groups:
         accordionConfiguration:
-          label: 'Tab Configuration'
+          label: 'Accordion Configuration'
   childNodes:
-    items:
+    accordion:
       type: 'TYPO3.Neos:ContentCollection'
-
+  properties:
+    bootstrapStyle:
+      type: string
+      defaultValue: 'default'
+      ui:
+        label: 'Layout'
+        inspector:
+          group: accordionConfiguration
+          editor: Content/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'default':
+                label: 'Default'
+              'success':
+                label: 'Success'
+              'info':
+                label: 'Info'
+              'warning':
+                label: 'Warning'
+              'danger':
+                label: 'Danger'
 
 'DMF.BootstrapContent:UiCollectionItem':
   superTypes: ['TYPO3.Neos:Content']
@@ -189,7 +209,7 @@
     content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
-    label: 'Ui Collection Item'
+    label: 'Tab / Accordion Content'
     icon: 'icon-plus-sign'
     inlineEditable: TRUE
     group: 'structure'
@@ -205,31 +225,5 @@
       ui:
         label: 'Title'
         inlineEditable: TRUE
-        inspector:
-          group: uiOptions
-
-'DMF.BootstrapContent:AccordionItem':
-  superTypes: ['TYPO3.Neos:Content']
-  childNodes:
-    content:
-      type: 'TYPO3.Neos:ContentCollection'
-  ui:
-    label: 'Accordion Collection Item'
-    icon: 'icon-plus-sign'
-    inlineEditable: TRUE
-    group: 'structure'
-    inspector:
-      groups:
-        uiOptions:
-          label: 'Multicontent Options'
-          priority: 1
-  properties:
-    title:
-      type: string
-      defaultValue: 'Enter title here'
-      ui:
-        label: 'Title'
-        inlineEditable: TRUE
-        reloadIfChanged: TRUE
         inspector:
           group: uiOptions

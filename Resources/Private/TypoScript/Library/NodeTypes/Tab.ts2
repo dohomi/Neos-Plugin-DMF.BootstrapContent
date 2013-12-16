@@ -1,12 +1,12 @@
 prototype(DMF.BootstrapContent:Tab) {
 
     tabItems = TYPO3.Neos:ContentCollection {
-        nodePath = 'items'
+        nodePath = 'tab'
         iterationName = 'itemIteration'
     }
     pillStyle = ${q(node).property('pillStyle')}
 
-    tabItemArray = ${q(node).children('items').children('[instanceof DMF.BootstrapContent:UiCollectionItem]')}
+    tabItemArray = ${q(node).children('tab').children('[instanceof DMF.BootstrapContent:UiCollectionItem]')}
 
     prototype(DMF.BootstrapContent:UiCollectionItem) {
         templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/TabItem.html'

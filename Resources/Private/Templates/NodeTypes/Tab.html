@@ -1,6 +1,6 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
-<div class="bt3tab">
+<div class="bt3-tab">
     <ul class="nav nav-{f:if(condition:'{pillStyle}', then:'pills', else:'tabs')}">
         <f:for each="{tabItemArray}" as="item" iteration="itemIterator">
             <li class="{f:if(condition: itemIterator.isFirst, then: 'active')}">

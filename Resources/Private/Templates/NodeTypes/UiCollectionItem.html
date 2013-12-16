@@ -1,10 +1,1 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-
-{f:if(condition:'{iteration.isFirst}', then:' <div class="tab-content">')}
-    <div class="tab-pane{f:if(condition:'{iteration.isFirst}', then:' fade in active', else: ' fade')}"
-         id="{node.identifier}">
-
-        <ts:render path="content"/>
-    </div>
-{f:if(condition:'{iteration.isLast}', then:' </div>')}
+<h3>You need to specify the correct "pathTemplate" for overwriting the view.</h3>
