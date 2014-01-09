@@ -5,3 +5,5 @@ include: NodeTypes/Carousel.ts2
 include: NodeTypes/Tab.ts2
 include: NodeTypes/Accordion.ts2
 include: NodeTypes/UiCollectionItem.ts2
+include: NodeTypes/Panels.ts2
+include: NodeTypes/Jumbotron.ts2

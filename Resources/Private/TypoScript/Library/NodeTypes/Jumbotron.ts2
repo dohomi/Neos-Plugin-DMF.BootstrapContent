@@ -1,0 +1,7 @@
+prototype(DMF.BootstrapContent:Jumbotron) < prototype(TYPO3.TypoScript:Template) {
+
+    fullWidth = ${q(node).property('fullWidth')}
+    jcontent = TYPO3.Neos:ContentCollection {
+		nodePath = '.'
+    }
+}
