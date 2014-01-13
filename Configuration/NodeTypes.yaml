@@ -25,6 +25,12 @@
                 label: 'Alert Warning'
               'alert alert-danger':
                 label: 'Alert Danger'
+              'well':
+                label: 'Well'
+              'well well-sm':
+                label: 'Well small'
+              'well well-lg':
+                label: 'Well large'
     visibilityBootstrap:
       type: string
       defaultValue: ''
@@ -230,7 +236,7 @@
 'DMF.BootstrapContent:Panels':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
-    panelContent:
+    pcontent:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Panel'
@@ -300,7 +306,7 @@
 'DMF.BootstrapContent:Jumbotron':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
-    content:
+    jcontent:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Jumbotron'
