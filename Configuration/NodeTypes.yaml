@@ -61,6 +61,7 @@
             'h4': TRUE
             'h5': TRUE
             'h6': TRUE
+            'blockquote': TRUE
 'TYPO3.Neos.NodeTypes:Text':
   properties:
     text:
@@ -72,8 +73,6 @@
             'h4': TRUE
             'h5': TRUE
             'h6': TRUE
-            'blockquote': TRUE
-
 'TYPO3.Neos.NodeTypes:TwoColumn':
   properties:
     layout:
@@ -161,9 +160,8 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        options:
+        tabConfiguration:
           label: 'Tab Configuration'
-          position: 5
   childNodes:
     tab:
       type: 'TYPO3.Neos:ContentCollection'
@@ -174,7 +172,7 @@
       ui:
         label: 'Pill style'
         inspector:
-          group: 'options'
+          group: tabConfiguration
 
 'DMF.BootstrapContent:Accordion':
   superTypes: ['TYPO3.Neos:Content']
@@ -185,9 +183,8 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        options:
+        accordionConfiguration:
           label: 'Accordion Configuration'
-          position: 5
   childNodes:
     accordion:
       type: 'TYPO3.Neos:ContentCollection'
@@ -198,7 +195,7 @@
       ui:
         label: 'Layout'
         inspector:
-          group: 'options'
+          group: accordionConfiguration
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -225,9 +222,9 @@
     group: 'structure'
     inspector:
       groups:
-        options:
+        uiOptions:
           label: 'Multicontent Options'
-          priority: 5
+          priority: 1
   properties:
     title:
       type: string
@@ -236,8 +233,7 @@
         label: 'Title'
         inlineEditable: TRUE
         inspector:
-          group: 'options'
-
+          group: uiOptions
 'DMF.BootstrapContent:Panels':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
@@ -250,9 +246,9 @@
     group: 'structure'
     inspector:
       groups:
-        options:
+        uiOptions:
           label: 'Panel Options'
-          priority: 5
+          priority: 1
   properties:
     title:
       type: string
@@ -261,7 +257,7 @@
         label: 'Title'
         inlineEditable: TRUE
         inspector:
-          group: 'options'
+          group: uiOptions
     footer:
       type: string
       defaultValue: 'Enter footer here'
@@ -269,14 +265,14 @@
         label: 'Footer'
         inlineEditable: TRUE
         inspector:
-          group: 'options'
+          group: uiOptions
     style:
       type: string
       defaultValue: 'default'
       ui:
         label: 'Layout'
         inspector:
-          group: 'options'
+          group: uiOptions
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -296,7 +292,7 @@
       ui:
         label: 'Layout'
         inspector:
-          group: 'options'
+          group: uiOptions
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -308,7 +304,6 @@
                 label: 'H4'
               '5':
                 label: 'H5'
-
 'DMF.BootstrapContent:Jumbotron':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
@@ -321,7 +316,7 @@
     group: 'structure'
     inspector:
       groups:
-        options:
+        jOptions:
           label: 'Jumbotron Options'
   properties:
     fullWidth:
@@ -330,4 +325,4 @@
       ui:
         label: 'Full width container'
         inspector:
-          group: 'options'
+          group: jOptions
