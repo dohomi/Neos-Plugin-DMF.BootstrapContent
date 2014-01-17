@@ -1,10 +1,10 @@
 prototype(DMF.BootstrapContent:Panels) < prototype(TYPO3.Neos:Content) {
 
-    title = ${q(node).property('title')}
+    headline = ${q(node).property('headline')}
     footer = ${q(node).property('footer')}
     style = ${q(node).property('style')}
     titleElement = ${q(node).property('titleElement')}
     content = TYPO3.Neos:ContentCollection {
-		nodePath = 'pcontent'
+		nodePath = 'content'
     }
 }

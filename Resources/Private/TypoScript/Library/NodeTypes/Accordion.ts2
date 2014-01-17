@@ -9,5 +9,21 @@ prototype(DMF.BootstrapContent:Accordion) {
         parentIdentifier = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('_identifier')}
         bootstrapStyle = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('bootstrapStyle')}
         templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/AccordionItem.html'
+        ui = true
+        // iteration = ${itemIteration}
+
+        prototype(TYPO3.Neos.NodeTypes:Text) {
+            templatePath = 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/Text.html'
+        }
+
+    }
+
+    prototype(TYPO3.Neos.NodeTypes:Text) {
+        parentIdentifier = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('_identifier')}
+        bootstrapStyle = ${q(node).parents('[instanceof DMF.BootstrapContent:Accordion]').property('bootstrapStyle')}
+        templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/AccordionItem.html'
+        ui = false
+        iteration = ${itemIteration}
+
     }
 }

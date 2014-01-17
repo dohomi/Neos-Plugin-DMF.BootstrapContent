@@ -4,6 +4,13 @@
 {f:if(condition:'{iteration.isFirst}', then:' <div class="tab-content">')}
     <div class="tab-pane{f:if(condition:'{iteration.isFirst}', then:' fade in active', else: ' fade')}"
          id="{node.identifier}">
-        <ts:render path="content"/>
+        <f:if condition="{ui}">
+            <f:then>
+                <ts:render path="content"/>
+            </f:then>
+            <f:else>
+                {neos:contentElement.editable(property: 'text', tag: 'p')}
+            </f:else>
+        </f:if>
     </div>
 {f:if(condition:'{iteration.isLast}', then:' </div>')}

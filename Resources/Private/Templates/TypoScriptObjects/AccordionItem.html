@@ -1,7 +1,7 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 
-{f:if(condition:'{iteration.isFirst}', then:' <div class="panel-group" id="{parentIdentifier}">')}
+{f:if(condition:'{iteration.isFirst}', then:'<div class="panel-group" id="{parentIdentifier}" xmlns:f="http://www.w3.org/1999/html">')}
 
 <div class="panel panel-{bootstrapStyle}">
     <div class="panel-heading">
@@ -13,7 +13,14 @@
     </div>
     <div class="panel-collapse collapse" id="{node.identifier}">
         <div class="panel-body">
-            <ts:render path="content" />
+            <f:if condition="{ui}">
+                <f:then>
+                    <ts:render path="content" />
+                </f:then>
+                <f:else>
+                    {neos:contentElement.editable(property: 'text', tag: 'p')}
+                </f:else>
+            </f:if>
         </div>
     </div>
 </div>

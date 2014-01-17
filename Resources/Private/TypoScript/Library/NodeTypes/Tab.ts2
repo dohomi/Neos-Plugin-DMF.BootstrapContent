@@ -6,10 +6,24 @@ prototype(DMF.BootstrapContent:Tab) {
     }
     pillStyle = ${q(node).property('pillStyle')}
 
-    tabItemArray = ${q(node).children('tab').children('[instanceof DMF.BootstrapContent:UiCollectionItem]')}
+    //tabItemArray = ${q(node).children('tab').children('[instanceof DMF.BootstrapContent:UiCollectionItem]')}
+    tabItemArray = ${q(node).children('tab').children()}
 
     prototype(DMF.BootstrapContent:UiCollectionItem) {
         templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/TabItem.html'
+        ui = true
+
+        prototype(TYPO3.Neos.NodeTypes:Text) {
+            templatePath = 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/Text.html'
+        }
+
+    }
+
+    prototype(TYPO3.Neos.NodeTypes:Text) {
+        templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/TabItem.html'
+        ui = false
+        iteration = ${itemIteration}
+
     }
 }
 

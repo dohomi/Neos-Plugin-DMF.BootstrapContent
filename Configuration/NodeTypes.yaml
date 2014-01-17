@@ -2,16 +2,23 @@
   ui:
     inspector:
       groups:
-        bootstrapOptions:
+        bootstrap:
           label: 'Bootstrap Options'
+          priority: 10
   properties:
+    title:
+      type: string
+      ui:
+        label: 'Title'
+        inspector:
+          group: 'bootstrap'
     layoutBootstrap:
       type: string
       defaultValue: ''
       ui:
         label: 'Bootstrap Layout'
         inspector:
-          group: bootstrapOptions
+          group: 'bootstrap'
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -37,7 +44,7 @@
       ui:
         label: 'Bootstrap Visibility'
         inspector:
-          group: bootstrapOptions
+          group: 'bootstrap'
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
@@ -61,6 +68,7 @@
             'h4': TRUE
             'h5': TRUE
             'h6': TRUE
+            'blockquote': TRUE
 'TYPO3.Neos.NodeTypes:Text':
   properties:
     text:
@@ -72,8 +80,6 @@
             'h4': TRUE
             'h5': TRUE
             'h6': TRUE
-            'blockquote': TRUE
-
 'TYPO3.Neos.NodeTypes:TwoColumn':
   properties:
     layout:
@@ -141,7 +147,7 @@
     inlineEditable: TRUE
     inspector:
       groups:
-        carouselConfiguration:
+        options:
           label: 'Carousel cofiguration'
   properties:
     interval:
@@ -150,7 +156,7 @@
       ui:
         label: 'Auto slide'
         inspector:
-          group: carouselConfiguration
+          group: 'options'
 
 'DMF.BootstrapContent:Tab':
   superTypes: ['TYPO3.Neos:Content']
@@ -163,11 +169,12 @@
       groups:
         options:
           label: 'Tab Configuration'
-          position: 5
   childNodes:
     tab:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
+    title:
+      defaultValue: 'Tab'
     pillStyle:
       type: boolean
       defaultValue: FALSE
@@ -187,11 +194,12 @@
       groups:
         options:
           label: 'Accordion Configuration'
-          position: 5
   childNodes:
     accordion:
       type: 'TYPO3.Neos:ContentCollection'
   properties:
+    title:
+      defaultValue: 'Accordion'
     bootstrapStyle:
       type: string
       defaultValue: 'default'
@@ -227,7 +235,7 @@
       groups:
         options:
           label: 'Multicontent Options'
-          priority: 5
+          priority: 10
   properties:
     title:
       type: string
@@ -241,7 +249,7 @@
 'DMF.BootstrapContent:Panels':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
-    pcontent:
+    content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Panel'
@@ -252,13 +260,15 @@
       groups:
         options:
           label: 'Panel Options'
-          priority: 5
+          priority: 10
   properties:
     title:
+      defaultValue: 'Panel'
+    headline:
       type: string
       defaultValue: 'Enter title here'
       ui:
-        label: 'Title'
+        label: 'Headline'
         inlineEditable: TRUE
         inspector:
           group: 'options'
@@ -312,7 +322,7 @@
 'DMF.BootstrapContent:Jumbotron':
   superTypes: ['TYPO3.Neos:Content']
   childNodes:
-    jcontent:
+    content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
     label: 'Jumbotron'
@@ -324,6 +334,8 @@
         options:
           label: 'Jumbotron Options'
   properties:
+    title:
+      defaultValue: 'Jumbotron'
     fullWidth:
       type: boolean
       defaultValue: FALSE
