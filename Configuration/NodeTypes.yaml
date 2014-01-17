@@ -227,24 +227,10 @@
     content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
-    label: 'Tab / Accordion Content'
+    label: 'Tab/Accordion multiple content'
     icon: 'icon-plus-sign'
     inlineEditable: TRUE
     group: 'structure'
-    inspector:
-      groups:
-        options:
-          label: 'Multicontent Options'
-          priority: 10
-  properties:
-    title:
-      type: string
-      defaultValue: 'Enter title here'
-      ui:
-        label: 'Title'
-        inlineEditable: TRUE
-        inspector:
-          group: 'options'
 
 'DMF.BootstrapContent:Panels':
   superTypes: ['TYPO3.Neos:Content']
@@ -266,7 +252,7 @@
       defaultValue: 'Panel'
     headline:
       type: string
-      defaultValue: 'Enter title here'
+      defaultValue: 'Enter headline here'
       ui:
         label: 'Headline'
         inlineEditable: TRUE

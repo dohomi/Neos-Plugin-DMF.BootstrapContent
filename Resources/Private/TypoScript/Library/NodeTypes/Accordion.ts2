@@ -24,6 +24,5 @@ prototype(DMF.BootstrapContent:Accordion) {
         templatePath = 'resource://DMF.BootstrapContent/Private/Templates/TypoScriptObjects/AccordionItem.html'
         ui = false
         iteration = ${itemIteration}
-
     }
 }
