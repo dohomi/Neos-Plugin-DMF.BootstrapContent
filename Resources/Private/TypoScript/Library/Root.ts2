@@ -7,3 +7,5 @@ include: NodeTypes/Accordion.ts2
 include: NodeTypes/UiCollectionItem.ts2
 include: NodeTypes/Panels.ts2
 include: NodeTypes/Jumbotron.ts2
+include: NodeTypes/IconImage.ts2
+include: NodeTypes/Image.ts2

@@ -1,0 +1,5 @@
+prototype(DMF.BootstrapContent:IconImage) {
+    color = ${q(node).property('color')}
+    size = ${q(node).property('size')}
+    style = ${q(node).property('style')}
+}

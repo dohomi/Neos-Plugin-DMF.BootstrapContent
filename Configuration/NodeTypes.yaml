@@ -80,6 +80,17 @@
             'h4': TRUE
             'h5': TRUE
             'h6': TRUE
+
+'TYPO3.Neos.NodeTypes:Column':
+  properties:
+    centerColumns:
+      type: boolean
+      default: FALSE
+      ui:
+        label: 'Center columns'
+        inspector:
+          group: 'column'
+
 'TYPO3.Neos.NodeTypes:TwoColumn':
   properties:
     layout:
@@ -158,6 +169,31 @@
         inspector:
           group: 'options'
 
+'TYPO3.Neos.NodeTypes:Image':
+  properties:
+    imgClass:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Image class'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+          editor: 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            placeholder: 'Default'
+            values:
+              '':
+                label: ''
+              img-responsive:
+                label: 'Responsive'
+              img-rounded:
+                label: 'Rounded'
+              img-circle:
+                label: 'Circle'
+              img-thumbnail:
+                label: 'Thumbnail'
+
 'DMF.BootstrapContent:Tab':
   superTypes: ['TYPO3.Neos:Content']
   ui:
@@ -227,7 +263,7 @@
     content:
       type: 'TYPO3.Neos:ContentCollection'
   ui:
-    label: 'Tab/Accordion multiple content'
+    label: 'Tab/Accordion content'
     icon: 'icon-plus-sign'
     inlineEditable: TRUE
     group: 'structure'
@@ -322,10 +358,53 @@
   properties:
     title:
       defaultValue: 'Jumbotron'
+      ui:
+        reloadIfChanged: TRUE
     fullWidth:
       type: boolean
       defaultValue: FALSE
       ui:
         label: 'Full width container'
+        reloadIfChanged: TRUE
         inspector:
           group: 'options'
+
+'DMF.BootstrapContent:IconImage':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'Icon image'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        options:
+          label: 'Icon options'
+  properties:
+    style:
+      type: string
+      defaultValue: 'glyphicon glyphicon-tint'
+      ui:
+        label: 'Full class of icon image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+    size:
+      type: string
+      defaultValue: '12'
+      ui:
+        label: 'Size of icon image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+      validation:
+        regularExpression:
+          regularExpression: '/[0-9]/'
+    color:
+      type: string
+      defaultValue: '#000'
+      ui:
+        label: 'Color of icon image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'options'
+
