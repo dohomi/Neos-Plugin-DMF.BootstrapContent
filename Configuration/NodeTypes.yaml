@@ -21,9 +21,10 @@
           group: 'bootstrap'
           editor: Content/Inspector/Editors/SelectBoxEditor
           editorOptions:
+            placeholder: 'Default'
             values:
               '':
-                label: 'Default'
+                label: ''
               'alert alert-success':
                 label: 'Alert Success'
               'alert alert-info':
