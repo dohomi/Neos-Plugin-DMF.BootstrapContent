@@ -3,7 +3,7 @@ TYPO3:
     yamlPersistenceManager:
       savePath: 'resource://DMF.BootstrapContent/Private/Form/'
     presets:
-      bootstrap:
+      bootstrapContent:
         title: 'Twitter bootstrap'
         parentPreset: 'default'
         formElementTypes:
