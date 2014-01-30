@@ -1,0 +1,4 @@
+# set of presetName
+prototype(TYPO3.Neos.NodeTypes:Form) {
+	presetName = 'hanswurst'
+}
