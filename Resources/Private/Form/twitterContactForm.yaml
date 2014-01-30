@@ -1,5 +1,5 @@
 type: 'TYPO3.Form:Form'
-identifier: contact-form
+identifier: twitterContactForm
 label: 'Contact us'
 renderingOptions:
   submitButtonLabel: 'Send'
@@ -48,17 +48,17 @@ renderables:
         defaultValue: ''
 finishers:
 # Uncomment the following lines and install the typo3/swiftmailer package to send mails
-  -
-    identifier: 'TYPO3.Form:Email'
-    options:
-      templatePathAndFilename: resource://DMF.BootstrapContent/Private/Templates/Form/Email.txt
-      subject: 'Contact from spain-internships.com'
-      recipientAddress: 'info@spain-internships.com'
-      recipientName: 'Spain Internships Team'
-      senderAddress: 'info@spain-internships.com'
-      senderName: 'Testmail'
-      replyToAddress: 'info@spain-internships.com'
-      format: plaintext
+#  -
+#    identifier: 'TYPO3.Form:Email'
+#    options:
+#      templatePathAndFilename: resource://DMF.BootstrapContent/Private/Templates/Form/Email.txt
+#      subject: 'Contact from spain-internships.com'
+#      recipientAddress: 'info@spain-internships.com'
+#      recipientName: 'Spain Internships Team'
+#      senderAddress: 'info@spain-internships.com'
+#      senderName: 'Testmail'
+#      replyToAddress: 'info@spain-internships.com'
+#      format: plaintext
   -
     identifier: 'TYPO3.Form:Confirmation'
     options:

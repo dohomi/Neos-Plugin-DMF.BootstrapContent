@@ -7,7 +7,7 @@ Adds some Twitter Bootstrap 3 functionality to Neos content elements
 Clone this repository into your application folder:
 
     * cd ROOT/Packages/Application
-    * git clone git@github.com:dohomi/Neos-Plugin-DMF.BootstrapContent.git DMF.BootstrapContent
+    * git clone https://github.com/dohomi/Neos-Plugin-DMF.BootstrapContent.git DMF.BootstrapContent
 
 Then check if the plugin needs to get activated inside of your package management. Check if the plugin is listed:
 
@@ -43,5 +43,5 @@ The JavaScript and CSS is available inside of the Resources/Public/assets/* fold
     <script src="{f:uri.resource(path: 'assets/jquery/jquery.min.js', package: 'DMF.BootstrapContent')}"></script>
     <script src="{f:uri.resource(path: 'assets/bootstrap/dist/js/bootstrap.js', package: 'DMF.BootstrapContent')}"></script>
 
-For the inclusion of CSS I recommend the use of Grunt as a task planer and build the CSS out of the Less files. They are available
+For the inclusion of CSS I recommend the use of Grunt as a task planer and build the CSS with processing the LESS files. They are available
 inside of Resources/Public/assets/bootstrap/less/*
