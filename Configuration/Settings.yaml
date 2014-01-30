@@ -1,0 +1,23 @@
+TYPO3:
+  Form:
+    yamlPersistenceManager:
+      savePath: 'resource://DMF.BootstrapContent/Private/Form/'
+    presets:
+      bootstrap:
+        title: 'Twitter bootstrap'
+        parentPreset: 'default'
+        formElementTypes:
+          'TYPO3.Form:Base':
+            renderingOptions:
+              layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/{@type}.html'
+          'TYPO3.Form:FormElement':
+            properties:
+              elementClassAttribute: 'form-control'
+          'TYPO3.Form:MultiLineText':
+            properties:
+              elementClassAttribute: 'form-control'
+
+  Neos:
+    typoScript:
+      autoInclude:
+        'TYPO3.Neos.NodeTypes': TRUE

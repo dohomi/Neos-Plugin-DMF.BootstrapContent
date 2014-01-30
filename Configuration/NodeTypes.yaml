@@ -409,3 +409,18 @@
         inspector:
           group: 'options'
 
+
+##
+# Adjust the "Form" node type:
+# Remove the empty select option and register the "contact-form"-Form
+#
+'TYPO3.Neos.NodeTypes:Form':
+  properties:
+    'formIdentifier':
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              '': ~
+              'contact-form':
+                label: 'Contact form'
