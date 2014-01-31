@@ -1,9 +1,4 @@
 -
-  requestFilter: 'parentRequest.isPackage("TYPO3.Neos") && isPackage("TYPO3.TYPO3CR") && isController("Asset")'
+  requestFilter: 'parentRequest.isPackage("TYPO3.Neos") && isPackage("TYPO3.TYPO3CR") && isController("Paginate")'
   options:
-    layoutRootPaths:
-      'TYPO3.Neos': 'resource://TYPO3.Neos/Private/Layouts/Media'
-      'TYPO3.Media': 'resource://TYPO3.Media/Private/Layouts'
-    partialRootPaths:
-      'TYPO3.Neos': 'resource://TYPO3.Neos/Private/Partials/Media'
-      'TYPO3.Media': 'resource://TYPO3.Media/Private/Partials'
+    templatePathAndFilename: resource://DMF.BootstrapContent/Private/Templates/ViewHelpers/Widget/Paginate/Index.html
