@@ -1,5 +1,4 @@
 # set of presetName
 prototype(TYPO3.Neos.NodeTypes:Form) {
-	templatePath = 'resource://TYPO3.Neos.NodeTypes/Private/Templates/NodeTypes/Form.html'
 	presetName = 'bootstrapContent'
 }

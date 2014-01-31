@@ -1,5 +1,5 @@
 type: 'TYPO3.Form:Form'
-identifier: twitterContactForm
+identifier: twitterForm
 label: 'Contact us'
 renderingOptions:
   submitButtonLabel: 'Send'

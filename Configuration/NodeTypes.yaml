@@ -422,5 +422,5 @@
           editorOptions:
             values:
               '': ~
-              'twitterContactForm':
-                label: 'Twitter Contact form'
+              'twitterForm':
+                label: 'Twitter form'

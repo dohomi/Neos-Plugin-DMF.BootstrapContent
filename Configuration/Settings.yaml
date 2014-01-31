@@ -16,8 +16,7 @@ TYPO3:
           'TYPO3.Form:MultiLineText':
             properties:
               elementClassAttribute: 'form-control'
-
   Neos:
     typoScript:
       autoInclude:
-        'TYPO3.Neos.NodeTypes': TRUE
+        'DMF.BootstrapContent': TRUE
