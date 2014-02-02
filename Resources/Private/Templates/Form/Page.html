@@ -1,0 +1,11 @@
+{namespace form=TYPO3\Form\ViewHelpers}
+<div>
+	<f:if condition="{page.label}">
+		<h3>{page.label}</h3>
+	</f:if>
+    <div class="row">
+	<f:for each="{page.elements}" as="element">
+		<form:renderRenderable renderable="{element}" />
+	</f:for>
+    </div>
+</div>

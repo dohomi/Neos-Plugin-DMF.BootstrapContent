@@ -6,7 +6,7 @@ renderingOptions:
 renderables:
   -
     type: 'TYPO3.Form:Page'
-    identifier: page-one
+    identifier: contact
     label: 'Contact'
     renderables:
       -
@@ -17,6 +17,7 @@ renderables:
           - identifier: 'TYPO3.Flow:NotEmpty'
         properties:
           placeholder: 'First Name'
+          groupColumn: '6'
         defaultValue: ''
       -
         type: 'TYPO3.Form:SingleLineText'
@@ -26,6 +27,7 @@ renderables:
           - identifier: 'TYPO3.Flow:NotEmpty'
         properties:
           placeholder: 'Last Name'
+          groupColumn: '6'
         defaultValue: ''
       -
         type: 'TYPO3.Form:SingleLineText'
@@ -46,6 +48,25 @@ renderables:
         properties:
           placeholder: 'Your Message'
         defaultValue: ''
+      -
+        type: 'DMF.BootstrapContent:HiddenTextfield'
+        identifier: hfield
+        label: 'Some label'
+        validators:
+          - identifier: 'DMF.BootstrapContent:Empty'
+        properties:
+          placeholder: 'Your Value'
+        defaultValue: ''
+      -
+        type: 'DMF.BootstrapContent:HiddenCheckbox'
+        identifier: hbox
+        label: 'Add this'
+        validators:
+          - identifier: 'DMF.BootstrapContent:Empty'
+        properties:
+          placeholder: 'Your Value'
+        defaultValue: ''
+
 finishers:
 # Uncomment the following lines and install the typo3/swiftmailer package to send mails
 #  -
@@ -64,4 +85,4 @@ finishers:
     options:
       message: >
         <h3>Thank you for your interest!</h3>
-        <p>Your email would have been sent. We will answer you request as soon as possible.</p>
+        <p>Your email has been sent. We will answer you request as soon as possible.</p>

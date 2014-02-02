@@ -1,9 +1,11 @@
 {namespace form=TYPO3\Form\ViewHelpers}
 <f:form.validationResults for="{element.identifier}">
-    <div class="form-group {f:if(condition: validationResults.flattenedErrors, then: ' has-error')}"<f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>>
-	<label class="control-label" for="{element.uniqueIdentifier}">{element.label -> f:format.nl2br()} <f:if condition="{element.required}"><f:render partial="TYPO3.Form:Field/Required" /></f:if></label>
-	<div class="{element.properties.containerClassAttribute}">
-		<f:render section="field" />
+    <div class="form-group{f:if(condition: validationResults.flattenedErrors, then: ' has-error')}{f:if(condition:'{element.properties.groupColumn}',then:' col-sm-{element.properties.groupColumn}', else:' pull-left col-sm-12')}"
+        <f:if condition="{element.rootForm.renderingOptions.previewMode}"> data-element="{form:form.formElementRootlinePath(renderable:element)}"</f:if>
+    >
+    <label class="control-label" for="{element.uniqueIdentifier}">{element.label -> f:format.nl2br()} <f:if condition="{element.required}"><f:render partial="TYPO3.Form:Field/Required" /></f:if></label>
+    <div class="{element.properties.containerClassAttribute}">
+        <f:render section="field" />
 		<f:if condition="{validationResults.flattenedErrors}">
 				<span class="text-danger">
                     <span class="glyphicon glyphicon-exclamation-sign"></span>

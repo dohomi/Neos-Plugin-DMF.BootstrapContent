@@ -10,12 +10,28 @@ TYPO3:
           'TYPO3.Form:Base':
             renderingOptions:
               layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/{@type}.html'
+          'TYPO3.Form:Page':
+            renderingOptions:
+              templatePathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/Page.html'
           'TYPO3.Form:FormElement':
             properties:
               elementClassAttribute: 'form-control'
           'TYPO3.Form:MultiLineText':
             properties:
               elementClassAttribute: 'form-control'
+          'DMF.BootstrapContent:HiddenTextfield':
+            superTypes: ['TYPO3.Form:MultiLineText']
+            renderingOptions:
+              templatePathPattern: 'resource://TYPO3.Form/Private/Form/MultiLineText.html'
+              layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/FieldBootstrapHidden.html'
+          'DMF.BootstrapContent:HiddenCheckbox':
+            superTypes: [TYPO3.Form:Checkbox]
+            renderingOptions:
+              templatePathPattern: 'resource://TYPO3.Form/Private/Form/Checkbox.html'
+              layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/FieldBootstrapHidden.html'
+        validatorPresets:
+          'DMF.BootstrapContent:Empty':
+            implementationClassName: 'DMF\BootstrapContent\Validation\Validator\EmptyValidator'
   Neos:
     typoScript:
       autoInclude:
