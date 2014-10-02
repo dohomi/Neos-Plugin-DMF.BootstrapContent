@@ -25,7 +25,7 @@ TYPO3:
               templatePathPattern: 'resource://TYPO3.Form/Private/Form/MultiLineText.html'
               layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/FieldBootstrapHidden.html'
           'DMF.BootstrapContent:HiddenCheckbox':
-            superTypes: [TYPO3.Form:Checkbox]
+            superTypes: ['TYPO3.Form:Checkbox']
             renderingOptions:
               templatePathPattern: 'resource://TYPO3.Form/Private/Form/Checkbox.html'
               layoutPathPattern: 'resource://DMF.BootstrapContent/Private/Templates/Form/FieldBootstrapHidden.html'
