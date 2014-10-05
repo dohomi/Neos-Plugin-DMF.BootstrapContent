@@ -5,8 +5,8 @@
     "version": null,
     "require": {
         "typo3/flow": "*",
-        "typo3/neos": "1.0.*",
-        "typo3/neos-nodetypes": "1.0.*"
+        "typo3/neos": "1.1.*",
+        "typo3/neos-nodetypes": "1.1.*"
     },
     "autoload": {
         "psr-0": {
