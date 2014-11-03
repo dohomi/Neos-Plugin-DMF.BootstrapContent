@@ -1,8 +1,10 @@
 {
     "name": "dmf/bootstrapcontent",
     "type": "typo3-flow-package",
-    "description": null,
-    "version": null,
+    "description": "TYPO3 Neos plugin for adding Bootstrap3 content and page options.",
+    "version": "1.1.0",
+    "license": "GPL-3.0+",
+    "homepage":"https://github.com/dohomi/Neos-Plugin-DMF.BootstrapContent",
     "require": {
         "typo3/flow": "*",
         "typo3/neos": "1.1.*",

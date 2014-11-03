@@ -12,7 +12,7 @@ Clone this repository into your application folder:
 Then check if the plugin needs to get activated inside of your package management. Check if the plugin is listed:
 
     ./flow package:list
-    ./flow package:activate dmf/seotool
+    ./flow package:activate dmf/bootstrapcontent
 
 ### Use of Bootstrap menu and breadcrumb in your site package
 You can use the bootstrap specific menu and breadcrumb inside of your Root.ts2 with following sample code:
