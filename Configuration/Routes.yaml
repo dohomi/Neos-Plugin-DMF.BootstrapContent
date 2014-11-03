@@ -1,0 +1,18 @@
+-
+  name: 'Search paginate'
+  uriPattern:    '{node}/{--typo3-typo3cr-viewhelpers-widget-paginateviewhelper.currentPage}'
+  defaults:
+    '@package':    'TYPO3.Neos'
+    '@controller': 'Frontend\Node'
+    '@format':     'html'
+    '@action':     'show'
+    '--typo3-typo3cr-viewhelpers-widget-paginateviewhelper':
+      '@package': ''
+      '@subpackage': ''
+      '@controller': ''
+      '@action': 'index'
+      'currentPage': '1'
+  routeParts:
+    node:
+      handler: TYPO3\Neos\Routing\FrontendNodeRoutePartHandler
+  appendExceedingArguments: TRUE
